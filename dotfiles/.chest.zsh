@@ -24,6 +24,9 @@ w() {
 # Open a finder in the current directory
 alias f="open ./";
 
+# Reload the current shell
+alias reload="source ~/.zshrc"
+
 ##### Git
 
 # Some aliases
@@ -33,6 +36,7 @@ alias glc="git log -1 --pretty=%B"
 alias gbc="git branch --contains"
 alias gcmsg="git commit -m"
 alias gcmssg="git commit -S -m"
+alias gff="git diff"
 
 ##### Search
 
