@@ -30,7 +30,7 @@ alias rr="source ~/.zshrc"
 ##### Docker
 
 alias dd="docker"
-alias ddp="docker ps"
+alias ddps="docker ps"
 alias ddr="docker run"
 alias dds="docker stop"
 alias ddk="docker kill"
@@ -45,6 +45,7 @@ alias ddcr="docker-compose run"
 alias ddcrr="docker-compose restart"
 alias ddcd="docker-compose down"
 alias ddce="docker-compose exec"
+alias ddcl="docker-compose logs -f"
 
 ##### Git
 
