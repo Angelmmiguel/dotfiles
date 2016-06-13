@@ -25,7 +25,26 @@ w() {
 alias f="open ./";
 
 # Reload the current shell
-alias reload="source ~/.zshrc"
+alias rr="source ~/.zshrc"
+
+##### Docker
+
+alias dd="docker"
+alias ddp="docker ps"
+alias ddr="docker run"
+alias dds="docker stop"
+alias ddk="docker kill"
+alias dde="docker exec"
+# Compose
+alias ddc="docker-compose"
+alias ddcp="docker-compose ps"
+alias ddcu="docker-compose up"
+alias ddcs="docker-compose start"
+alias ddcst="docker-compose stop"
+alias ddcr="docker-compose run"
+alias ddcrr="docker-compose restart"
+alias ddcd="docker-compose down"
+alias ddce="docker-compose exec"
 
 ##### Git
 
