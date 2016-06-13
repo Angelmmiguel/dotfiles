@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 _display_name() {
-  echo -e "\n##### $1 #####"
+  echo -e "\n##### $1 #####"
 }
 
-# Check if the command exist and display a message
+# Check if the command exist and display a message
 _here_we_go_with() {
   _display_name "$1"
   if hash $1 2>/dev/null; then
@@ -16,7 +16,7 @@ _here_we_go_with() {
   fi
 }
 
-# Check if the brew app exist and display a message
+# Check if the brew app exist and display a message
 _brew_here_we_go_with() {
   _display_name "$1"
   if brew list -1 | grep -q "$1"; then
@@ -28,7 +28,7 @@ _brew_here_we_go_with() {
   fi
 }
 
-# Check if a file exist and display a message
+# Check if a file exist and display a message
 _directory_here_we_go_with() {
   _display_name "$1"
   if [ -d "$2" ]; then
@@ -40,7 +40,7 @@ _directory_here_we_go_with() {
   fi
 }
 
-# Check if a file exist and display a message
+# Check if a file exist and display a message
 _file_here_we_go_with() {
   _display_name "$1"
   if [ -f "$2" ]; then
@@ -52,27 +52,27 @@ _file_here_we_go_with() {
   fi
 }
 
-# Install homebrew
+# Install homebrew
 if _here_we_go_with "brew"; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Install zsh
+# Install zsh
 if _brew_here_we_go_with "zsh"; then
   brew install zsh zsh-completions
 fi
 
-# Install oh-my-zsh!
+# Install oh-my-zsh!
 if _directory_here_we_go_with "Oh my Zsh" "$HOME/.oh-my-zsh"; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-# Install docker!
+# Install docker!
 if _brew_here_we_go_with "docker"; then
   brew install docker docker-machine docker-compose
 fi
 
-# Install xhyve
+# Install xhyve
 if _brew_here_we_go_with "docker-machine-driver-xhyve"; then
   brew install docker-machine-driver-xhyve
   echo "We need sudo permission to instal Xhyve (https://github.com/zchee/docker-machine-driver-xhyve#install)"
@@ -80,13 +80,13 @@ if _brew_here_we_go_with "docker-machine-driver-xhyve"; then
   sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 fi
 
-# Install dinghy
+# Install dinghy
 if _brew_here_we_go_with "dinghy"; then
   brew tap codekitchen/dinghy
   brew install dinghy
   echo "Creating dinghy machine"
   dinghy create --provider xhyve
-  # Add data to .zshrc
+  # Add data to .zshrc
   echo "Adding dinghy env to zshrc"
   echo -e "\n# Dinghy env" >> ~/.zshrc
   dinghy env >> ~/.zshrc
