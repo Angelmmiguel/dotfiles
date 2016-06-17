@@ -27,6 +27,16 @@ alias f="open ./";
 # Reload the current shell
 alias rr="source ~/.zshrc"
 
+##### Sketch
+
+alias sk="sketchtool"
+alias sks="sketchtool export slices"
+alias ska="sketchtool export artboards"
+alias skp="sketchtool export pages"
+alias skls="sketchtool list slices"
+alias skla="sketchtool list artboards"
+alias sklp="sketchtool list pages"
+
 ##### Docker
 
 alias dd="docker"
