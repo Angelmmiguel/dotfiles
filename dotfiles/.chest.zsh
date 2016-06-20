@@ -57,6 +57,12 @@ alias ddcd="docker-compose down"
 alias ddce="docker-compose exec"
 alias ddcl="docker-compose logs -f"
 
+docker-clean() {
+  docker rm -v $(docker ps -a -q -f status=exited)
+  docker rmi $(docker images -f "dangling=true" -q)
+  docker images | awk '{ print $1,$2,$3 }' | grep "none" | awk '{print $3}' | xargs -I {} docker rmi {}
+}
+
 ##### Git
 
 # Some aliases
