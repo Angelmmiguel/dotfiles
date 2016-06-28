@@ -55,7 +55,7 @@ alias dkcr="docker-compose run"
 alias dkcrr="docker-compose restart"
 alias dkcd="docker-compose down"
 alias dkce="docker-compose exec"
-alias dkcl="docker-compose logs -f"
+alias dkcl="docker-compose logs -f --tail=100"
 
 docker-clean() {
   docker rm -v $(docker ps -a -q -f status=exited)
