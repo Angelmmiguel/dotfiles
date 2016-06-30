@@ -1,3 +1,8 @@
+##### Exports
+
+# Update the theme of ZSH
+ZSH_THEME="fino"
+
 ##### Utils
 
 # Clear spaces from a given string
