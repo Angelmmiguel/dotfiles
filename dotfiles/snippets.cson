@@ -28,7 +28,7 @@
       <${3:MyComponent} {...${2:element}} key={${2:element}.id} />
     )\\}
     """
-  'Base React component':
+  'React component':
     'prefix': 'brc'
     'body':"""
     import React, { PropTypes } from 'react';
@@ -38,7 +38,7 @@
      */
     class ${1:BaseComponent} extends React.Component {
       /**
-       * PropTypes
+       * Props of the component
        *
        * @property {object} example Example of PropType
        */
@@ -49,7 +49,7 @@
       }
 
       /**
-       * Render the MyComponent component
+       * Render the ${1:BaseComponent} component
        */
       render() {
         return (
@@ -61,7 +61,62 @@
     // Export the class
     export default ${1:BaseComponent};
     """
-  'Base Stateless React component':
+  'React Container':
+    'prefix': 'brcn'
+    'body':"""
+    import React, { PropTypes } from 'react';
+    import { connect } from 'react-redux';
+
+    /**
+     * ${2:Description}
+     */
+    class ${1:BaseContainer} extends React.Component {
+      /**
+       * Props of the component
+       *
+       * @property {function} dispatch Dispatch actions to redux
+       */
+      static get propTypes() {
+        return {
+          dispatch: PropTypes.func.isRequired
+        };
+      }
+
+      /**
+       * Initialize ${1:BaseContainer} and bind methods
+       */
+      constructor(props) {
+        super(props);
+
+        this.state = {}
+      }
+
+      /**
+       * Render the ${1:BaseContainer} component
+       */
+      render() {
+        return (
+          <h1>BaseContainer!</h1>
+        );
+      }
+    }
+
+    /**
+     * Connect the container with redux state
+     */
+    const mapStateToProps = (state, props) => {
+      const { dispatch } = props;
+
+      return Object.assign({}, {
+        ...props,
+        dispatch
+      })
+    }
+
+    // Export the class
+    export default connect(mapStateToProps)(${1:BaseContainer});
+    """
+  'Stateless React component':
     'prefix': 'brsc',
     'body':"""
     import React, { PropTypes } from 'react';
@@ -84,7 +139,7 @@
 
     export default ${1:StatelessComponent};
     """
-  'Base React test component':
+  'React test component':
     'prefix': 'brtc'
     'body':"""
     /*eslint-env node, mocha */

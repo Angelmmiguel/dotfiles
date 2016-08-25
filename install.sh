@@ -28,6 +28,18 @@ _brew_here_we_go_with() {
   fi
 }
 
+# Check if the brew app exist and display a message
+_brew_cask_here_we_go_with() {
+  _display_name "$1"
+  if brew cask list -1 | grep -q "$1"; then
+    echo "$1 is installed. Skipping..."
+    return 1
+  else
+    echo "Installing $1..."
+    return 0
+  fi
+}
+
 # Check if a file exist and display a message
 _directory_here_we_go_with() {
   _display_name "$1"
@@ -55,6 +67,21 @@ _file_here_we_go_with() {
 # Install homebrew
 if _here_we_go_with "brew"; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# Install cask!
+if _directory_here_we_go_with "Brew cask" "/usr/local/Caskroom"; then
+  brew tap caskroom/cask
+fi
+
+# Install atom
+if _brew_cask_here_we_go_with "atom"; then
+  brew cask install atom
+fi
+
+# Install chrome
+if _brew_cask_here_we_go_with "google-chrome"; then
+  brew cask install google-chrome
 fi
 
 # Install zsh
@@ -108,6 +135,11 @@ fi
 # Install vimrc
 if _file_here_we_go_with "vimrc" "$HOME/.vimrc"; then
   cp ./dotfiles/.vimrc $HOME
+fi
+
+# Install atom snippets
+if _file_here_we_go_with "Atom Snippets" "$HOME/.atom/snippets.cson"; then
+  cp ./dotfiles/snippets.cson $HOME/.atom
 fi
 
 echo -e "\nFinished! :D"
