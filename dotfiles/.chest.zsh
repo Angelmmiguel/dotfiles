@@ -72,12 +72,14 @@ docker-clean() {
 
 # Some aliases
 alias gs="git status"
-alias glm="git log --pretty=format:'%h : %s'"
 alias glc="git log -1 --pretty=%B"
 alias gbc="git branch --contains"
 alias gcmsg="git commit -m"
 alias gcmssg="git commit -S -m"
 alias gff="git diff"
+
+# Log formatting
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold red)- %an%C(reset)' --all"
 
 ##### Search
 
