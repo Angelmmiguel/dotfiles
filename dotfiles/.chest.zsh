@@ -31,6 +31,8 @@ alias f="open ./";
 
 # Reload the current shell
 alias rr="source ~/.zshrc"
+alias vh="sudo vim /private/etc/hosts"
+alias vc="vim ~/.zshrc"
 
 ##### Sketch
 
@@ -78,6 +80,8 @@ alias gbc="git branch --contains"
 alias gcmsg="git commit -m"
 alias gcmssg="git commit -S -m"
 alias gff="git diff"
+alias gsu="git submodule update"
+alias gsui="git submodule update --init"
 
 # Log formatting
 alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold red)- %an%C(reset)' --all"
