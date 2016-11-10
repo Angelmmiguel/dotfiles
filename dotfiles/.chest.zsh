@@ -61,7 +61,7 @@ alias dkcs="docker-compose start"
 alias dkcst="docker-compose stop"
 alias dkcr="docker-compose run"
 alias dkcrr="docker-compose restart"
-alias dkcd="docker-compose down"
+alias dkcd="docker-compose down -v --remove-orphans"
 alias dkce="docker-compose exec"
 alias dkcl="docker-compose logs -f --tail=100"
 
