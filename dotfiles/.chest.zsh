@@ -29,6 +29,9 @@ w() {
 # Open a finder in the current directory
 alias f="open ./";
 
+# Tmux
+alias tmux="tmux -u"
+
 # Reload the current shell
 alias rr="source ~/.zshrc"
 alias vh="sudo vim /private/etc/hosts"
@@ -82,6 +85,9 @@ alias gcmssg="git commit -S -m"
 alias gff="git diff"
 alias gsu="git submodule update"
 alias gsui="git submodule update --init"
+
+# Sync a fork
+alias gsyncf="git fetch upstream && git checkout master && git merge upstream/master"
 
 # Log formatting
 alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold red)- %an%C(reset)' --all"
