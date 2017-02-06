@@ -74,6 +74,10 @@ docker-clean() {
   docker images | awk '{ print $1,$2,$3 }' | grep "none" | awk '{print $3}' | xargs -I {} docker rmi {}
 }
 
+dkcrl() {
+  dkcrr $1 && dkcl $1
+}
+
 ##### Git
 
 # Some aliases
