@@ -74,8 +74,14 @@ docker-clean() {
   docker images | awk '{ print $1,$2,$3 }' | grep "none" | awk '{print $3}' | xargs -I {} docker rmi {}
 }
 
+# Restart and log
 dkcrl() {
   dkcrr $1 && dkcl $1
+}
+
+# Start and log
+dkcsl() {
+  dkcs $1 && dkcl $1
 }
 
 ##### Git
