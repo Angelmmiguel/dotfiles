@@ -84,6 +84,15 @@ dkcsl() {
   dkcs $1 && dkcl $1
 }
 
+##### Kubernetes
+
+# Kubectl
+alias kb="kubectl"
+alias kbg="kubectl get"
+
+# Minikube
+alias mk="minikube"
+
 ##### Git
 
 # Some aliases
@@ -101,6 +110,12 @@ alias gsyncf="git fetch upstream && git checkout master && git merge upstream/ma
 
 # Log formatting
 alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold red)- %an%C(reset)' --all"
+
+##### Others. Just to simplify the commands
+
+alias v="vim"
+alias e="exit"
+alias cl="clear"
 
 ##### Search
 
