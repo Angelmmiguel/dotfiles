@@ -1,0 +1,31 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontSize": 14,
+    "editor.tabSize": 2,
+    // Hack by default
+    "editor.fontFamily": "Hack, Monaco, 'Courier New', monospace",
+    "editor.rulers": [100],
+    // Excluede all these files and folders
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.arcanist-extensions": true,
+        "**/.bundle": true,
+        "**/.rsync_cache": true,
+        "**/.harpoon": true,
+        "**/tmp": true,
+        "**/.sass-cache": true,
+        "**/_site": true,
+        "**/.tags": true,
+        "**/.tags1": true
+    },
+    // Remove trailing whitespaces and add a new line
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "window.zoomLevel": 0,
+    // You must install the Hopscotch theme or remove this line
+    "workbench.colorTheme": "Hopscotch"
+}
