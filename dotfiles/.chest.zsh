@@ -1,8 +1,5 @@
 ##### Exports
 
-# Update the theme of ZSH
-ZSH_THEME="fino"
-
 ##### Utils
 
 # Clear spaces from a given string
@@ -105,11 +102,14 @@ alias gff="git diff"
 alias gsu="git submodule update"
 alias gsui="git submodule update --init"
 
-# Sync a fork
+# Sync a fork. Upstream must be present
 alias gsyncf="git fetch upstream && git checkout master && git merge upstream/master"
 
 # Log formatting
 alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold red)- %an%C(reset)' --all"
+
+# (WORK) Create a commit ready for lint
+alias gclint="git add -A && git commit -m 'Lint' && arc diff"
 
 ##### Others. Just to simplify the commands
 
