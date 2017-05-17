@@ -34,6 +34,14 @@ alias rr="source ~/.zshrc"
 alias vh="sudo vim /private/etc/hosts"
 alias vc="vim ~/.zshrc"
 
+# Work with folders
+alias count="find . ! -name . -prune -print | grep -c /"
+
+# Grep files in the folder
+lsg() {
+  ls -la | grep $@
+}
+
 ##### Sketch
 
 alias sk="sketchtool"
