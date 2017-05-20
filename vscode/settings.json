@@ -5,7 +5,7 @@
     // Hack by default
     "editor.fontFamily": "Hack, Monaco, 'Courier New', monospace",
     "editor.rulers": [100],
-    // Excluede all these files and folders
+    // Exclude all these files and folders
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -27,5 +27,18 @@
     "files.insertFinalNewline": true,
     "window.zoomLevel": 0,
     // You must install the Hopscotch theme or remove this line
-    "workbench.colorTheme": "Hopscotch"
+    "workbench.colorTheme": "Hopscotch",
+    // This is related to ProjectManager plugin
+    "projectManager.openInNewWindow": false,
+    "projectManager.projectsLocation": "/Users/angel/Projects",
+    "projectManager.vscode.ignoredFolders": [
+      "node_modules", 
+      "out", 
+      "typings", 
+      "test",
+        "tmp",
+        "build",
+        "bower_components"
+    ],
+    "projectManager.vscode.maxDepthRecursion": 3
 }
