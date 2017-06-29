@@ -75,8 +75,8 @@ if _directory_here_we_go_with "Brew cask" "/usr/local/Caskroom"; then
 fi
 
 # Install atom
-if _brew_cask_here_we_go_with "atom"; then
-  brew cask install atom
+if _brew_cask_here_we_go_with "visual-studio-code"; then
+  brew cask install visual-studio-code
 fi
 
 # Install chrome
@@ -99,12 +99,9 @@ if _brew_here_we_go_with "docker"; then
   brew install docker docker-machine docker-compose
 fi
 
-# Install xhyve
-if _brew_here_we_go_with "docker-machine-driver-xhyve"; then
-  brew install docker-machine-driver-xhyve
-  echo "We need sudo permission to instal Xhyve (https://github.com/zchee/docker-machine-driver-xhyve#install)"
-  sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-  sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+# Install virtual box!
+if _brew_cask_here_we_go_with "virtualbox"; then
+  brew cask install virtualbox
 fi
 
 # Install dinghy
@@ -112,7 +109,7 @@ if _brew_here_we_go_with "dinghy"; then
   brew tap codekitchen/dinghy
   brew install dinghy
   echo "Creating dinghy machine"
-  dinghy create --provider xhyve
+  dinghy create --provider virtualbox
   # Add data to .zshrc
   echo "Adding dinghy env to zshrc"
   echo -e "\n# Dinghy env" >> ~/.zshrc
@@ -137,9 +134,9 @@ if _file_here_we_go_with "vimrc" "$HOME/.vimrc"; then
   cp ./dotfiles/.vimrc $HOME
 fi
 
-# Install atom snippets
-if _file_here_we_go_with "Atom Snippets" "$HOME/.atom/snippets.cson"; then
-  cp ./dotfiles/snippets.cson $HOME/.atom
-fi
+# Install VSCode settings
+# if _file_here_we_go_with "VSCode config file" "$HOME/Library/Application\ Support/Code/User/settings.json"; then
+#   cp ./vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+# fi
 
 echo -e "\nFinished! :D"
