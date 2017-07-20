@@ -98,6 +98,11 @@ alias kbg="kubectl get"
 # Minikube
 alias mk="minikube"
 
+# Ksonnet
+# It requires to run the following command first:
+# git clone git@github.com:ksonnet/ksonnet-lib.git ~/.ksonnet-lib 
+alias ksonnet="jsonnet -J ~/.ksonnet-lib"
+
 ##### Git
 
 # Some aliases
