@@ -103,6 +103,13 @@ alias mk="minikube"
 # git clone git@github.com:ksonnet/ksonnet-lib.git ~/.ksonnet-lib 
 alias ksonnet="jsonnet -J ~/.ksonnet-lib"
 
+##### OpenSSL
+
+# Get certificate expiration date
+cert_expiration() {
+  echo | openssl s_client -servername $1 -connect $1:$2 2>/dev/null | openssl x509 -noout -issuer -subject -dates
+}
+
 ##### Git
 
 # Some aliases
