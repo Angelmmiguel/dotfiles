@@ -100,7 +100,7 @@ alias mk="minikube"
 
 # Ksonnet
 # It requires to run the following command first:
-# git clone git@github.com:ksonnet/ksonnet-lib.git ~/.ksonnet-lib 
+# git clone git@github.com:ksonnet/ksonnet-lib.git ~/.ksonnet-lib
 alias ksonnet="jsonnet -J ~/.ksonnet-lib"
 
 ##### OpenSSL
@@ -121,6 +121,9 @@ alias gcmssg="git commit -S -m"
 alias gff="git diff"
 alias gsu="git submodule update"
 alias gsui="git submodule update --init"
+
+# Set the upstream of the current branch (GitHub new branches)\
+alias gps="git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
 
 # Sync a fork. Upstream must be present
 alias gsyncf="git fetch upstream && git checkout master && git merge upstream/master"
