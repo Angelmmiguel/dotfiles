@@ -42,6 +42,11 @@ lsg() {
   ls -la | grep $@
 }
 
+# Estimate the compressed size of a file (GZIP)
+gzipEstimation() {
+  gzip -9 -c $1 | wc -c | awk '{$1=$1/1024; print "\033[32mEstimated size:\033[0m",$1,"KB";}'
+}
+
 ##### Sketch
 
 alias sk="sketchtool"
