@@ -130,15 +130,13 @@ cert_expiration() {
 # Some aliases
 alias gs="git status"
 alias glc="git log -1 --pretty=%B"
+alias gb="git --no-pager branch"
 alias gbc="git branch --contains"
 alias gcmsg="git commit -m"
 alias gcmssg="git commit -S -m"
 alias gff="git diff"
 alias gsu="git submodule update"
 alias gsui="git submodule update --init"
-
-# Set the upstream of the current branch (GitHub new branches)\
-alias gps="git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
 
 # Sync a fork. Upstream must be present
 alias gsyncf="git fetch upstream && git checkout master && git merge upstream/master"
@@ -148,6 +146,12 @@ alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 
 # (WORK) Create a commit ready for lint
 alias gclint="git add -A && git commit -m 'Lint' && arc diff"
+
+# Set the upstream of the current branch (GitHub new branches)\
+gpsu() {
+  branch=$(git rev-parse --abbrev-ref HEAD);
+  git push --set-upstream origin $branch
+}
 
 ##### Others. Just to simplify the commands
 
