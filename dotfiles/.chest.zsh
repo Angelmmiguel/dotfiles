@@ -37,6 +37,11 @@ alias vc="vim ~/.zshrc"
 # Work with folders
 alias count="find . ! -name . -prune -print | grep -c /"
 
+# Display information from package.json. It requires jq!
+alias ns="cat package.json | jq .scripts"
+alias nd="cat package.json | jq .dependencies"
+alias ndd="cat package.json | jq .devDependencies"
+
 # Grep files in the folder
 lsg() {
   ls -la | grep $@
