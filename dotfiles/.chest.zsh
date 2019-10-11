@@ -42,6 +42,11 @@ alias ns="cat package.json | jq .scripts"
 alias nd="cat package.json | jq .dependencies"
 alias ndd="cat package.json | jq .devDependencies"
 
+# List and celan node_modules folders
+# https://dev.to/trilon/how-to-delete-all-nodemodules-folders-on-your-machine-43dh
+alias node-modules-space="find . -name "node_modules" -type d -prune -print | xargs du -chs"
+alias node-modules-clean="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
+
 # Grep files in the folder
 lsg() {
   ls -la | grep $@
