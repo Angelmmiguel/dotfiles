@@ -121,6 +121,17 @@ alias dinghy-proxy="\
 alias kb="kubectl"
 alias kbg="kubectl get"
 
+# Configure a new kubectl context
+#
+# $1: name
+# $2: token
+# $3: cluster
+# $4: namespace
+kb_config_context() {
+  kubectl config set-credentials "$1" --token "$2"
+  kubectl config set-context $1 --user "$1" --cluster "$3" --namespace "$4"
+}
+
 # Minikube
 alias mk="minikube"
 
