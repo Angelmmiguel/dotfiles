@@ -160,6 +160,10 @@ alias gff="git diff"
 alias gsu="git submodule update"
 alias gsui="git submodule update --init"
 
+# Useful selectors
+alias gcob="git branch | fzf | xargs git checkout"
+alias gcof="git ls-files -m | fzf | xargs git checkout"
+
 # Sync a fork. Upstream must be present
 alias gsyncf="git fetch upstream && git checkout master && git merge upstream/master"
 
