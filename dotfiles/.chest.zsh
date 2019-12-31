@@ -161,6 +161,7 @@ alias gsu="git submodule update"
 alias gsui="git submodule update --init"
 
 # Useful selectors
+alias gbd="git branch | fzf | xargs git branch -D"
 alias gcob="git branch | fzf | xargs git checkout"
 alias gcof="git ls-files -m | fzf | xargs git checkout"
 
