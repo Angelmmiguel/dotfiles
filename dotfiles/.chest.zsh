@@ -39,6 +39,7 @@ alias count="find . ! -name . -prune -print | grep -c /"
 
 # Display information from package.json. It requires jq!
 alias ns="cat package.json | jq .scripts"
+alias ne="cat package.json | jq -r '.scripts | keys[]' | fzf | xargs yarn"
 alias nd="cat package.json | jq .dependencies"
 alias ndd="cat package.json | jq .devDependencies"
 
