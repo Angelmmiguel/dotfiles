@@ -122,6 +122,10 @@ alias dinghy-proxy="\
 alias kb="kubectl"
 alias kbg="kubectl get"
 
+# Kubectx
+alias kbx="kubectx"
+alias kbs="kubens"
+
 # Configure a new kubectl context
 #
 # $1: name
