@@ -158,6 +158,7 @@ cert_expiration() {
 alias gs="git status"
 alias ga="git add"
 alias gp="git push"
+alias gl="git pull"
 alias glc="git log -1 --pretty=%B"
 alias gb="git --no-pager branch"
 alias gbc="git branch --contains"
